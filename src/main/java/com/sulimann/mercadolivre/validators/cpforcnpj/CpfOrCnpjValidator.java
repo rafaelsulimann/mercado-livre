@@ -1,4 +1,4 @@
-package com.sulimann.mercadolivre.validators.cpfOrCnpj;
+package com.sulimann.mercadolivre.validators.cpforcnpj;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;

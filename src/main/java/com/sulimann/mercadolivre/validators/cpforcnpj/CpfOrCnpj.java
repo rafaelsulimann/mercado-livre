@@ -1,4 +1,4 @@
-package com.sulimann.mercadolivre.validators.cpfOrCnpj;
+package com.sulimann.mercadolivre.validators.cpforcnpj;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;

@@ -1,4 +1,4 @@
-package com.sulimann.mercadolivre.validators.existsById;
+package com.sulimann.mercadolivre.validators.uniquevalue;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -10,16 +10,15 @@ import javax.validation.Constraint;
 import javax.validation.Payload;
 
 @Documented
-@Constraint(validatedBy = ExistsByIdValidator.class)
+@Constraint(validatedBy = UniqueValueValidator.class)
 @Target({ ElementType.FIELD })
 @Retention(RetentionPolicy.RUNTIME)
-public @interface ExistsById {
+public @interface UniqueValue {
 
-    String message() default "Recurso não encontrado";
+    String message() default "Valor já existente";
     Class<?>[] groups() default {}; //PADRÃO
     Class<? extends Payload>[] payload() default {}; //PADRÃO
     String fieldName();
     Class<?> domainClass();
     
 }
-
