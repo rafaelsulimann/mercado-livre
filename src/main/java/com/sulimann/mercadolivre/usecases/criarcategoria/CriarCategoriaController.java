@@ -1,4 +1,4 @@
-package com.sulimann.mercadolivre.usecases.criarusuario;
+package com.sulimann.mercadolivre.usecases.criarcategoria;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -12,22 +12,22 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sulimann.mercadolivre.models.Usuario;
+import com.sulimann.mercadolivre.models.Categoria;
 import com.sulimann.mercadolivre.utils.Path;
 
 @RestController
-@RequestMapping(value = Path.USUARIO)
-public class CriarUsuarioController {
+@RequestMapping(value = Path.CATEGORIA)
+public class CriarCategoriaController {
 
     @PersistenceContext
     private EntityManager manager;
 
     @PostMapping
     @Transactional
-    public ResponseEntity<CriarUsuarioResponse> criarUsuario(@RequestBody @Valid CriarUsuarioRequest request){
-        Usuario usuario = request.toUsuario();
-        this.manager.persist(usuario);
-        return ResponseEntity.status(HttpStatus.CREATED).body(new CriarUsuarioResponse(usuario));
+    public ResponseEntity<CriarCategoriaResponse> criarCategoria(@RequestBody @Valid CriarCategoriaRequest request){
+        Categoria categoria = request.toCategoria();
+        this.manager.persist(categoria);
+        return ResponseEntity.status(HttpStatus.CREATED).body(new CriarCategoriaResponse(categoria));
     }
     
 }
